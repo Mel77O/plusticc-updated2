@@ -1,5 +1,6 @@
 // Login.js
 import React from 'react';
+import {Link} from 'react-router-dom';
 import './Login.css'; // Import your CSS file for styling
 
 const Login = () => {
@@ -9,7 +10,7 @@ const Login = () => {
 
       <div className="login-box">
         <h2>Welcome to +TIC</h2>
-        <p>Create an account and help clean our environment!</p>
+        <p>Login and help clean our environment!</p>
 
         {/* Login form */}
         <form>
@@ -29,6 +30,8 @@ const Login = () => {
           </label>
           <span className="forgot-password">Forgot password?</span>
         </div>
+
+        <h4>Don't have an account yet?{' '}<Link to="/register">Register here</Link></h4>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 /* GetStarted.css */
 .get-started-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.25fr 1fr;
     height: 100vh;
   }
   
@@ -16,7 +16,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 35px;
+    padding-right: 35px;
     text-align: center;
   }
   
@@ -38,5 +41,13 @@
     padding: 10px;
     font-size: 1rem;
     cursor: pointer;
+    width: 100%;
   }
+
+  .login-button{
+    background-color: #789E61;
+    color: #fff;
+  }
+
+  
   

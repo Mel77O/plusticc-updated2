@@ -5,6 +5,7 @@ import GetStarted from './GetStarted';
 import Login from './Login';
 import Register from './Register';
 import About from './About/About';
+import Contact from './Contact/Contact';
 
 function App() {
     
@@ -18,6 +19,7 @@ function App() {
             <Route path="/login" element={<Login />} /> 
             <Route path="/register" element={<Register />}/> 
             <Route path="/about" element={<About />}/> 
+            <Route path="/contact" element={<Contact />}/> 
             </Routes>
         </div>
         </Router>

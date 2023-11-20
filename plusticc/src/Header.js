@@ -42,7 +42,7 @@ export default function Header() {
           <a href="/">Organization</a>
           <a href="/">Map</a>
           <a href="/About">About Us</a>
-          <a href="/">Contact Us</a>
+          <a href="/Contact">Contact Us</a>
         </nav>
       </CSSTransition>
     </header>

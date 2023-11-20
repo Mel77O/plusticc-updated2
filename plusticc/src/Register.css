@@ -80,8 +80,9 @@ button {
 }
 
 .background-image-left {
+    margin-top: 15px;
     width: 100%;
-    height: 100%;
+    height: 96.5%;
     object-fit: cover;
     border-top-left-radius: 20px; /* Ensure the border radius matches .reg-box */
     border-bottom-left-radius: 20px;

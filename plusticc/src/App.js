@@ -4,6 +4,7 @@ import Header from './Header';
 import GetStarted from './GetStarted';
 import Login from './Login';
 import Register from './Register';
+import About from './About/About';
 
 function App() {
     
@@ -15,7 +16,8 @@ function App() {
             <Routes>
             <Route path="/" element={<GetStarted />} />
             <Route path="/login" element={<Login />} /> 
-            <Route path="/register" element={<Register />} /> 
+            <Route path="/register" element={<Register />}/> 
+            <Route path="/about" element={<About />}/> 
             </Routes>
         </div>
         </Router>

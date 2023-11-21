@@ -39,7 +39,7 @@ export default function Header() {
         <nav className="Nav">
           <a href="/">Get Started</a>
           <a href="/">Home</a>
-          <a href="/">Organization</a>
+          <a href="/organization">Organization</a>
           <a href="/">Map</a>
           <a href="/about">About Us</a>
           <a href="/contact">Contact Us</a>

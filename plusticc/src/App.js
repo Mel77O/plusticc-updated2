@@ -6,6 +6,7 @@ import Login from './Login';
 import Register from './Register';
 import About from './About/About';
 import Contact from './Contact/Contact';
+import Organization from './Organization';
 
 function App() {
     

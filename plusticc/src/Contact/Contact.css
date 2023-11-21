@@ -8,6 +8,7 @@
 
 /* Left grid */
 .left-grid-custom {
+    margin-top: 5%;
     margin-bottom: 5%;
     margin-left: 10%;
 }
@@ -22,7 +23,7 @@
 }
 
 .left-grid-custom div {
-    padding: 200px;
+    padding: 100px;
 }
 
 .left-grid-custom {
@@ -36,6 +37,7 @@
 
 /* Right grid */
 .right-grid-custom {
+    margin-top: 5%;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -69,15 +71,15 @@ textarea::placeholder {
 .button-custom {
     padding: 10px 20px; /* Adjust padding for a smaller button */
     background-color: #fff;
-    color: #000;
+    color: #789E61;
     cursor: pointer;
-    border: 1px solid #000;
+    border: 1px solid #fff;
     margin-top: 10px;
     margin-right: 50%;
     width: 150px; /* Set the width to 150px to make it smaller */
   }
 
 .button-custom:hover {
-    background-color: #007bff;
+    background-color: #789E61;
     color: #fff;
 }

@@ -18,6 +18,7 @@ function App() {
             <Route path="/" element={<GetStarted />} />
             <Route path="/login" element={<Login />} /> 
             <Route path="/register" element={<Register />}/> 
+            <Route path="/organization" element={<Organization />} /> 
             <Route path="/about" element={<About />}/> 
             <Route path="/contact" element={<Contact />}/> 
             </Routes>

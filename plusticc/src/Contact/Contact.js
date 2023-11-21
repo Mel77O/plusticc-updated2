@@ -34,7 +34,10 @@ const Contact = () => {
       <div className="left-grid-custom">
         <div>
           <h2>We would love to hear from you!</h2>
-          <p>Drop us a message if you'd like to work with us to end plastic waste, explore membership, opportunities, media partnerships, or other enquiries.</p>
+          <p>
+            Drop us a message if you'd like to work with us to end plastic waste,
+            explore membership, opportunities, media partnerships, or other enquiries.
+          </p>
         </div>
       </div>
 
@@ -43,6 +46,7 @@ const Contact = () => {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
+            className="contact-input" // Updated CSS class
             name="fullName"
             value={formData.fullName}
             onChange={handleChange}
@@ -50,6 +54,7 @@ const Contact = () => {
           />
           <input
             type="email"
+            className="contact-input" // Updated CSS class
             name="email"
             value={formData.email}
             onChange={handleChange}
@@ -57,13 +62,15 @@ const Contact = () => {
           />
           <input
             type="text"
+            className="contact-input" // Updated CSS class
             name="phoneNumber"
             value={formData.phoneNumber}
             onChange={handleChange}
             placeholder="Phone Number"
           />
           <textarea
-            name="message"
+            className="contact-input" // Updated CSS class
+            name="contactMessage" // Updated textarea name
             value={formData.message}
             onChange={handleChange}
             placeholder="Message"

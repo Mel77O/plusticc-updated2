@@ -33,8 +33,7 @@ export default function Header() {
       <img src={require("./logo.png")} className="Logo" alt="logo"/>
       <CSSTransition
         in={!isSmallScreen || isNavVisible}
-        timeout={350}
-        classNames="NavAnimation"
+        timeout={350}zz
       >
         <nav className="Nav">
           <a href="/">Get Started</a>

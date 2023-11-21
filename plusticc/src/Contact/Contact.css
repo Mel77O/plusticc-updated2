@@ -8,6 +8,11 @@
   
   /* Left grid */
   .left-grid-custom {
+}
+
+/* Left grid */
+.left-grid-custom {
+    margin-top: 5%;
     margin-bottom: 5%;
     margin-left: 10%;
   }
@@ -33,9 +38,9 @@
     padding: 20px;
     color: #ffffff; /* Set the text color to white */
   }
-  
-  /* Right grid */
-  .right-grid-custom {
+/* Right grid */
+.right-grid-custom {
+    margin-top: 5%;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -73,7 +78,7 @@
     background-color: #fff;
     color: #000;
     cursor: pointer;
-    border: 1px solid #000;
+    border: 1px solid #fff;
     margin-top: 10px;
     margin-right: 50%;
     width: 150px; /* Set the width to 150px to make it smaller */
@@ -84,3 +89,8 @@
     color: #fff;
   }
   
+
+.button-custom:hover {
+    background-color: #789E61;
+    color: #fff;
+}

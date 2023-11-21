@@ -33,10 +33,15 @@ const GetStarted = () => {
           <h3>"The only way forward is to treat plastic as a valuable resource, not as disposable waste. Let's manage it wisely for a cleaner, greener tomorrow."</h3>
 
           <div className="buttons-container">
-            <button className="sign-up-button" onClick={handleRegisterClick}>Register</button> <p>-or-</p>
-            <button className="login-button" onClick={handleLoginClick}>Login</button>
+            <button className="sign-up-button" onClick={handleRegisterClick}
+              style={{marginLeft: '10px', marginRight: '20px', borderRadius: '5px'}}>
+                Register
+            </button> <p> or </p>
+            <button className="login-button" onClick={handleLoginClick}
+              style={{marginLeft: '20px', marginRight: '10px', borderRadius:'5px', backgroundColor:'white', color:'black', border:'1px solid black'}}>
+                Login
+            </button>
           </div>
-
           
         </div>
       </div>

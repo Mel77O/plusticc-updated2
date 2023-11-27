@@ -36,8 +36,7 @@ export default function Header() {
         timeout={350}zz
       >
         <nav className="Nav">
-          <a href="/">Get Started</a>
-          <a href="/">Home</a>
+          <a href="/home">Home</a>
           <a href="/organization">Organization</a>
           <a href="/">Map</a>
           <a href="/about">About Us</a>

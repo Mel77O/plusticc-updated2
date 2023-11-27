@@ -26,7 +26,7 @@
     background-color: white;
     border-radius: 8px;
     text-align: center;
-    width: 300px; /* Adjust the width as needed */
+    width: 500px; /* Adjust the width as needed */
     max-width: 80%; /* Ensure it doesn't exceed 80% of the viewport width */
   }
   
@@ -54,7 +54,7 @@
   input {
     padding: 8px;
     margin-bottom: 10px;
-    width: 100%;
+    width: 90%;
   }
   
   button {
@@ -73,7 +73,28 @@
     align-items: center; /* Center items vertically */
     flex-direction: row; /* Arrange items in a row */
     margin-top: 10px;
+    margin-right: 80px;
+    margin-left: 80px;
   }
+
+  .remember-me {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center items vertically */
+    flex-direction: row; /* Arrange items in a row */
+    white-space: nowrap; /* Prevent text from wrapping onto a new line */
+  }
+
+  .remember-me input {
+    line-height: 1.5; /* 1.5 times the font size */
+    height: 20px; /* Optional: set the overall height of the input */
+  }  
+
+  .remember-me span {
+    white-space: nowrap; /* Prevent text from wrapping onto a new line */
+    margin-left: 10px;   /* Adjust this value to add space between the checkbox and text */
+  }
+
   
   /* Style for the "Forgot password?" link */
   .forgot-password {

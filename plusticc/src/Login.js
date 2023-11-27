@@ -9,7 +9,7 @@ const Login = () => {
       <div className="background-image" />
 
       <div className="login-box">
-        <h2>Welcome to +TIC</h2>
+        <h1>Welcome to +TIC</h1>
         <p>Login and help clean our environment!</p>
 
         {/* Login form */}
@@ -24,14 +24,14 @@ const Login = () => {
         </form>
 
         <div className="extra-options">
-          <label>
+          <label className="remember-me">
             <input type="checkbox" />
-            Remember me
+            <span>Remember me</span>
           </label>
           <span className="forgot-password">Forgot password?</span>
         </div>
 
-        <h4>Don't have an account yet?{' '}<Link to="/register">Register here</Link></h4>
+        <h4>Don't have an account yet?<Link to="/register">Register here</Link></h4>
       </div>
     </div>
   );

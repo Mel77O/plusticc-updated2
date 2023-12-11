@@ -7,6 +7,7 @@ import Register from './Register';
 import About from './About/About';
 import Contact from './Contact/Contact';
 import Organization from './Organization';
+import Home from './Home';
 
 function App() {
     
@@ -22,6 +23,8 @@ function App() {
             <Route path="/organization" element={<Organization />} /> 
             <Route path="/about" element={<About />}/> 
             <Route path="/contact" element={<Contact />}/> 
+            <Route path="/home" element={<Home />}/> 
+
             </Routes>
         </div>
         </Router>

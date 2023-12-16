@@ -4,7 +4,7 @@ import Header from '../Header';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    fullName: '',
+    fname: '',
     email: '',
     phoneNumber: '',
     message: '',
@@ -15,17 +15,34 @@ const Contact = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your form submission logic here
-    console.log('Form submitted:', formData);
-    // Reset form fields
-    setFormData({
-      fullName: '',
-      email: '',
-      phoneNumber: '',
-      message: '',
-    });
+
+    try {
+      // Make a POST request to your Spring Boot backend
+      const response = await fetch('http://localhost:8080/contact/insertContact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        console.log('Form submitted successfully:', formData);
+        // Reset form fields    
+        setFormData({
+          fname: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
+      } else {
+        console.error('Error submitting form:', response.status);
+      }
+    } catch (error) {
+      console.error('Error:', error.message);
+    }
   };
 
   return (
@@ -47,7 +64,7 @@ const Contact = () => {
           <input
             type="text"
             className="contact-input" // Updated CSS class
-            name="fullName"
+            name="fname"
             value={formData.fullName}
             onChange={handleChange}
             placeholder="Full Name"
@@ -63,18 +80,20 @@ const Contact = () => {
           <input
             type="text"
             className="contact-input" // Updated CSS class
-            name="phoneNumber"
-            value={formData.phoneNumber}
+            name="subject"
+            value={formData.subject}
             onChange={handleChange}
-            placeholder="Phone Number"
+            placeholder="Subject"
           />
           <textarea
+            type="textarea" // Updated type attribute
             className="contact-input" // Updated CSS class
-            name="contactMessage" // Updated textarea name
+            name="message" // Updated textarea name
             value={formData.message}
             onChange={handleChange}
             placeholder="Message"
           />
+
           <button className="button-custom" type="submit">Submit</button>
         </form>
       </div>

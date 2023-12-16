@@ -1,96 +1,96 @@
 /* Contact.css */
 .contact-container-custom {
-    display: flex;
-    background-color: #789e61;
-    height: 100vh; /* Adjust the height as needed */
-    overflow: hidden;
-  }
-  
-  /* Left grid */
-  .left-grid-custom {
+  display: flex;
+  background-color: #789e61;
+  height: 100vh; /* Adjust the height as needed */
+  overflow: hidden;
 }
 
 /* Left grid */
 .left-grid-custom {
-    margin-top: 5%;
-    margin-bottom: 5%;
-    margin-left: 10%;
-  }
-  
-  .left-grid-custom h2 {
-    font-size: 36px;
-    margin-bottom: 10px; /* Add margin to separate the heading from the paragraph */
-  }
-  
-  .left-grid-custom p {
-    line-height: 1.3;
-  }
-  
-  .left-grid-custom div {
-    padding: 200px;
-  }
-  
-  .left-grid-custom {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center the content vertically */
-    padding: 20px;
-    color: #ffffff; /* Set the text color to white */
-  }
+}
+
+/* Left grid */
+.left-grid-custom {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 10%;
+}
+
+.left-grid-custom h2 {
+  font-size: 36px;
+  margin-bottom: 10px; /* Add margin to separate the heading from the paragraph */
+}
+
+.left-grid-custom p {
+  line-height: 1.3;
+}
+
+.left-grid-custom div {
+  padding: 200px;
+}
+
+.left-grid-custom {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the content vertically */
+  padding: 20px;
+  color: #ffffff; /* Set the text color to white */
+}
 /* Right grid */
 .right-grid-custom {
-    margin-top: 5%;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 50px;
-    background-color: #789e61; /* Set the background color for the right grid */
-  }
-  
-  /* Form styling */
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Input and textarea styling */
-  .contact-input {
-    margin-bottom: 16px;
-    padding: 16px; /* Increase the textbox height */
-    width: 400px;
-    background-color: #789E61;
-    border: 5px solid white;
-    margin-right: 50%;
-  }
-  
-  .contact-input::placeholder {
-    color: white;
-  }
-  
-  textarea.contact-input {
-    height: 150px; /* Set the height for textarea */
-  }
-  
-  .button-custom {
-    padding: 10px 20px; /* Adjust padding for a smaller button */
-    background-color: #fff;
-    color: #000;
-    cursor: pointer;
-    border: 1px solid #fff;
-    margin-top: 10px;
-    margin-right: 50%;
-    width: 150px; /* Set the width to 150px to make it smaller */
-  }
-  
-  .button-custom:hover {
-    background-color: #007bff;
-    color: #fff;
-  }
-  
+  margin-top: 5%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+  background-color: #789e61; /* Set the background color for the right grid */
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Input and textarea styling */
+.contact-input {
+  margin-bottom: 16px;
+  padding: 16px; /* Increase the textbox height */
+  width: 400px;
+  background-color: #789E61;
+  border: 5px solid white;
+  margin-right: 50%;
+}
+
+.contact-input::placeholder {
+  color: white;
+}
+
+textarea.contact-input {
+  height: 150px; /* Set the height for textarea */
+}
+
+.button-custom {
+  padding: 10px 20px; /* Adjust padding for a smaller button */
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+  border: 1px solid #fff;
+  margin-top: 10px;
+  margin-right: 50%;
+  width: 150px; /* Set the width to 150px to make it smaller */
+}
 
 .button-custom:hover {
-    background-color: #789E61;
-    color: #fff;
+  background-color: #007bff;
+  color: #fff;
+}
+
+
+.button-custom:hover {
+  background-color: #789E61;
+  color: #fff;
 }

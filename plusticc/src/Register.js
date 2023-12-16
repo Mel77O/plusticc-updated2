@@ -1,81 +1,93 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; 
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Register.css'; // Import your CSS file for styling
 
 const Register = () => {
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
+  const [formData, setFormData] = useState({
+    username: '',
+    firstname: '',
+    lastname: '',
+    email: '',
+    password: '',
+    birthdate: '',
+  });
 
+  const [registrationStatus, setRegistrationStatus] = useState(null);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+ 
     try {
-      const response = await fetch('localhost:8080/register/insertRegister', {
+      const response = await fetch('http://localhost:8080/register/insertRegister', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          username: formData.get('username'),
-          firstname: formData.get('firstname'),
-          lastname: formData.get('lastname'),
-          email: formData.get('email'),
-          password: formData.get('password'),
-          dob: formData.get('dob'),
-          // Add other form fields as needed
-        }),
+        body: JSON.stringify(formData),
       });
-
+ 
       if (response.ok) {
-        // Registration successful, handle accordingly
-        // For example, you can redirect the user to a success page or show a success message
-        console.log('Registration successful');
-        // Redirect to success page or display a success message to the user
+        setRegistrationStatus('success');
+        setFormData({
+          username: '',
+          firstname: '',
+          lastname: '',
+          email: '',
+          password: '',
+          birthdate: '',
+        });
       } else {
-        // Handle error responses
-        const errorData = await response.json(); // Parse error response as JSON
-        console.error('Registration failed:', errorData);
-        // Display error message or take appropriate action based on the error
+        setRegistrationStatus('error');
+        console.log('wadawd')
       }
     } catch (error) {
-      // Handle network errors
-      console.error('Network error:', error);
-      // Display a generic error message or handle the error accordingly
+      setRegistrationStatus('error');
+   
     }
   };
 
   return (
     <div className="reg-container">
-      {/* Background image for the whole page */}
       <div className="background-image" />
-
       <div className="container">
-        {/* Left grid with background image */}
         <div className="left-grid">
-          {/* Background image for the left grid */}
-          <img src={require("./background.jpg")} className="background-image-left" alt="registration" />
+          <img src={require("./regClean.jpg")} className="background-image-left" alt="registration" />
         </div>
 
-        {/* Right grid with registration form */}
         <div className="right-grid">
           <div className="reg-box">
             <img src={require("./logo.png")} className="Logo" alt="logo" />
 
-            {/* Reg form */}
             <form onSubmit={handleSubmit}>
               <button style={{ backgroundColor: "#db4437" }}>Continue with Google</button>
               <p>- or -</p>
-              <input type="text" name="username" placeholder='Username' required />
-              <input type="text" name="firstname" placeholder='Firstname' required />
-              <input type="text" name="lastname" placeholder='Lastname' required />
-              <input type="email" name="email" placeholder='Email' required />
-              <input type="password" name="password" placeholder='Password' required />
-              <input type="text" name="dob" placeholder='YY/MM/DD' pattern="\d{2}/\d{2}/\d{2}" title="YY/MM/DD format required (e.g., 22/12/31)" required />
-
+              <input type="text" name="username" placeholder="Username" value={formData.username} onChange={handleChange} required />
+              <input type="text" name="firstname" placeholder="Firstname" value={formData.firstname} onChange={handleChange} required />
+              <input type="text" name="lastname" placeholder="Lastname" value={formData.lastname} onChange={handleChange} required />
+              <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
+              <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required />
+              <input type="date" name="birthdate" placeholder="YYYY-MM-DD" value={formData.birthdate} onChange={handleChange} required />
               <button type="submit">Create account</button>
             </form>
-            
+
+            {registrationStatus === 'success' && (
+              <p style={{ fontSize: "14px" }} className="success-message">Registration Successful!</p>
+            )}
+
+            {registrationStatus === 'error' && (
+              <p style={{ fontSize: "14px" }} className="error-message">Registration Failed. Please try again.</p>
+            )}
+
             <p style={{ fontSize: "14px" }}>By clicking "Create account", I agree to +TIC's</p>
             <h4>Already have an account?{' '}<Link to="/login">Log in</Link></h4>
-            
           </div>
         </div>
       </div>

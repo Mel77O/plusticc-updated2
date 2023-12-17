@@ -11,12 +11,6 @@ body {
     overflow: hidden;
   }
   
-  .left-grid-about {
-    background-size: 100%;
-    background-position: center;
-    height: 105vh;
-  }
-  
   .right-grid-about,
   .second-image-container-about {
     display: flex;
@@ -29,12 +23,14 @@ body {
     opacity: 1; /* Initial opacity */
     transition: opacity 0.5s ease; /* Add a smooth transition effect */
     text-align: left; /* Align text to the left */
+    
   }
   
   .second-image-about {
     background-size: 100%;
     background-position: right; /* Set the background position to right */
-    height: 100vh; /* Set the height as needed */
+    height: 105vh; /* Set the height as needed */
+    box-shadow: 5px 5px 20px black;
   }
   
   .right-grid-about span {
@@ -43,7 +39,74 @@ body {
     padding-bottom: 10px; /* Add bottom padding to the span */
   }
   
-  .second-image-container-about{
+  
+  .first-image-about {
+    background-size: 100%;
+    background-position: left; /* Set the background position to right */
+    height: 105vh; /* Set the height as needed */
     overflow: hidden;
+    box-shadow: 5px 5px 20px black;
+  }
+
+  .center-grid-about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    grid-column: span 2;
+    position: relative;
+    padding-top: 5%;
+  }
+  
+  .center-image-about {
+    position: relative;
+    width: 80%;
+    height: auto;
+    margin-bottom: 10px;
+    box-shadow: 5px 5px 20px black;
+  }
+  
+  .center-image-about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 1; /* Set to 1 when hovering */
+    transition: opacity 0.5s ease;  /* Adjusted to opacity transition only */
+  }
+  
+  .center-image-about:hover {
+    background-color: black;
+    opacity: 0.5; /* Set opacity to 1 when hovering */
+  }
+  
+  .member-names {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    
+  }
+  
+  .center-image-about:hover + .member-names {
+    opacity: 1;
+  }
+  
+  .member-names span {
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 5px;
+    color: rgb(0, 0, 0);
+  }
+
+  .team-heading {
+    text-decoration: underline;
   }
   

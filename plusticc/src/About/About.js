@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './About.css';
 import backgroundImage1 from './bgAbout1.jpg';
 import backgroundImage2 from './bgAbout2.jpg';
+import grpic from './grpic.png';
 import Header from '../Header';
+
 const About = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -26,7 +28,7 @@ const About = () => {
         <Header/>
       {/* Our Vision */}
       <div className="section-about">
-        <div className="left-grid-about" style={{ backgroundImage: `url(${backgroundImage1})` }}>
+        <div className="first-image-about" style={{ backgroundImage: `url(${backgroundImage1})` }}>
           {/* You can add content or leave it empty */}
         </div>
         <div className="right-grid-about">
@@ -39,7 +41,7 @@ const About = () => {
           </p>
         </div>
       </div>
-
+      
       {/* Our mission */}
       <div className={`section-about ${isScrolled ? 'scrolled-about' : ''}`}>
         <div className="right-grid-about">
@@ -52,6 +54,21 @@ const About = () => {
         </div>
         <div className="second-image-about" style={{ backgroundImage: `url(${backgroundImage2})` }}>
           {/* You can add content or leave it empty */}
+        </div>
+      </div>
+
+      <div className="center-grid-about">
+        <img src={grpic} alt="Group Picture" className="center-image-about" />
+        <div className="member-names">
+          <span className="team-heading">TEAM MEMBERS</span>
+          <br />
+          <span>Melciah A. Opleda</span>
+          <br />
+          <span>Denisse Claire G. Morales</span>
+          <br /> 
+          <span>Nicole Angel Bacus</span>
+          <br />
+          <span>Francis Vinz Racaza</span>
         </div>
       </div>
     </div>

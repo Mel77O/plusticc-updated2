@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css'; // Import your CSS file for styling
+import Header from './Header';
 
 const Home = () => {
   return (
     <div className="home-container">
       <div className="upper-container">
+        <Header/>
         <div className="upper-image" />
       </div>
 

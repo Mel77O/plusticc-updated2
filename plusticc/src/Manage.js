@@ -1,18 +1,17 @@
 import React from 'react';
-import './Manage.css'; // Import your Manage CSS file for styling
+import 'react-router-dom'; // Import Link from react-router-dom
+import './Manage.css'; // Import your CSS file for styling
 
 const Manage = () => {
   return (
-    <div className="manage-container">
-      <div className="horizontal-containers">
-        <div className="container1">
-          <h3>Container 1</h3>
-          <p>Content for Container 1</p>
-        </div>
-        <div className="container2">
-          <h3>Container 2</h3>
-          <p>Content for Container 2</p>
-        </div>
+    <div className="manageU-container">
+      <div className="manage-upper-container">
+        <div className="manage-upper-image" />
+      </div>
+
+      <div className="manage-lower-container">
+        {/* Add your content for Type component here */}
+        <h2>HATDOG</h2>
       </div>
     </div>
   );

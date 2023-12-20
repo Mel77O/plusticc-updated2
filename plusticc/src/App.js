@@ -16,8 +16,6 @@ function App() {
   return (
     <Router>
       <div>
-        {/* Conditionally render the Header based on the route */}
-        <Header />
         <Routes>
           <Route path="/" element={<GetStarted />} />
           <Route path="/login" element={<Login />} />
@@ -29,9 +27,6 @@ function App() {
           <Route path="/manage" element={<Manage />} />
           <Route path="/type" element={<Type />} />
           <Route path="/cause" element={<Cause />} />
-
-
-          
         </Routes>
       </div>
     </Router>

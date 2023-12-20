@@ -1,18 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./Header.css";
 import { CSSTransition } from "react-transition-group";
-import { Link, useNavigate } from "react-router-dom";
-import { IconButton, Avatar, Menu, MenuItem } from "@material-ui/core";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 
-const Header = ({ loggedInUser }) => {
-  console.log('Header - loggedInUser:', loggedInUser);
+export default function Header() {
   const [isNavVisible, setNavVisibility] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
-  const [anchorEl, setAnchorEl] = useState(null);
-  const navigate = useNavigate();
 
-  console.log(loggedInUser);
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 700px)");
     mediaQuery.addListener(handleMediaQueryChange);
@@ -22,39 +15,25 @@ const Header = ({ loggedInUser }) => {
       mediaQuery.removeListener(handleMediaQueryChange);
     };
   }, []);
-  
-  const handleMediaQueryChange = (mediaQuery) => {
-    setIsSmallScreen(mediaQuery.matches);
+
+  const handleMediaQueryChange = mediaQuery => {
+    if (mediaQuery.matches) {
+      setIsSmallScreen(true);
+    } else {
+      setIsSmallScreen(false);
+    }
   };
 
-  const handleMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-  };
-
-  const handleLogout = () => {
-    // Implement logout logic
-    // Redirect or perform any other necessary actions
-    navigate('/');
-    console.log("Logout clicked");
+  const toggleNav = () => {
+    setNavVisibility(!isNavVisible);
   };
 
   return (
     <header className="Header">
-      <img
-        src={require("./logo.png")}
-        className="Logo"
-        alt="logo"
-        onClick={() => console.log("Logo clicked")}
-      />
+      <img src={require("./logo.png")} className="Logo" alt="logo"/>
       <CSSTransition
         in={!isSmallScreen || isNavVisible}
-        timeout={350}
-        classNames="NavTransition"
-        unmountOnExit
+        timeout={350}zz
       >
         <nav className="Nav">
           <a href="/home">Home</a>
@@ -62,34 +41,8 @@ const Header = ({ loggedInUser }) => {
           <a href="/map ">Map</a>
           <a href="/about">About Us</a>
           <a href="/contact">Contact Us</a>
-
-          {/* Use Material-UI components for the profile icon and dropdown */}
-          <div className="ProfileIconContainer">
-            <Avatar
-              alt="Profile Icon"
-              src={require("./profile-icon.png")}
-              className="ProfileIcon"
-              style={{ height: "30px", width: "30px", cursor: "pointer", marginLeft: "10px" }}
-              onClick={handleMenuOpen}
-            />
-            <Menu
-              anchorEl={anchorEl}
-              keepMounted
-              open={Boolean(anchorEl)}
-              onClose={handleMenuClose}
-            >
-              <MenuItem onClick={handleMenuClose}>
-                <p>{loggedInUser?.username}</p>
-              </MenuItem>
-              <MenuItem onClick={handleLogout}>
-                Logout
-              </MenuItem>
-            </Menu>
-          </div>
         </nav>
       </CSSTransition>
     </header>
   );
 }
-//eyy
-export default Header;

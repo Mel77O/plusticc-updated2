@@ -6,6 +6,7 @@ import Login from './Login';
 import Register from './Register';
 import About from './About/About';
 import Contact from './Contact/Contact';
+import Map from './Map/Map';
 import Organization from './Organization';
 import Home from './Home';
 import Manage from './Manage'; // Import the Manage component
@@ -29,9 +30,7 @@ function App() {
           <Route path="/manage" element={<Manage />} />
           <Route path="/type" element={<Type />} />
           <Route path="/cause" element={<Cause />} />
-
-
-          
+          <Route path="/map" element={<Map />} />
         </Routes>
       </div>
     </Router>

@@ -1,15 +1,28 @@
 /* GetStarted.css */
 .get-started-container {
     display: grid;
-    grid-template-columns: 1.25fr 1fr;
+    grid-template-columns: 1fr 1fr;
     height: 100vh;
   }
   
   .left-grid {
+    position: relative;
     background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fphotos%2FGjCx5KhulZI&psig=AOvVaw3mRlr_VG45dTaaikQCblFk&ust=1700012918644000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPiNgOWvwoIDFQAAAAAdAAAAABAJ');
     background-size: cover;
     background-position: center;
   }
+  
+  /* Add a specific class to apply the overlay only to GetStarted page */
+  .get-started-overlay::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 80%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  }
+  
   
   .right-grid {
     display: flex;
@@ -18,8 +31,8 @@
     justify-content: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    padding-left: 35px;
-    padding-right: 35px;
+    margin-left: 70px;
+    margin-right: 50px;
     text-align: center;
   }
   

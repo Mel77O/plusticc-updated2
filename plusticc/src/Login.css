@@ -24,7 +24,7 @@
     transform: translate(-50%, -50%);
     padding: 50px;
     background-color: white;
-    border-radius: 8px;
+    border-radius: 20px;
     text-align: center;
     width: 500px; /* Adjust the width as needed */
     max-width: 80%; /* Ensure it doesn't exceed 80% of the viewport width */
@@ -36,6 +36,7 @@
   }
   
   .login-box p {
+    text-align: center;
     font-size: 1rem;
     margin-bottom: 20px;
   }
@@ -69,21 +70,21 @@
   
   .extra-options {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center; /* Center items vertically */
     flex-direction: row; /* Arrange items in a row */
-    margin-top: 10px;
+    margin-top: 5px;
     margin-right: 80px;
     margin-left: 80px;
   }
 
   .remember-me {
     display: flex;
-    justify-content: space-between;
-    align-items: center; /* Center items vertically */
-    flex-direction: row; /* Arrange items in a row */
-    white-space: nowrap; /* Prevent text from wrapping onto a new line */
-  }
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    flex-direction: row;
+    white-space: nowrap;
+}
 
   .remember-me input {
     line-height: 1.5; /* 1.5 times the font size */
@@ -93,12 +94,20 @@
   .remember-me span {
     white-space: nowrap; /* Prevent text from wrapping onto a new line */
     margin-left: 10px;   /* Adjust this value to add space between the checkbox and text */
+    line-height: 1.5;
   }
 
   
   /* Style for the "Forgot password?" link */
   .forgot-password {
+    margin-top: 50px;
     color: #789E61;
     cursor: pointer;
   }
   
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px; /* Adjust the margin as needed */
+    text-align: center;
+  }

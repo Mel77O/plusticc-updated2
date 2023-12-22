@@ -35,10 +35,12 @@ export default function Header() {
     setGifVisible(!gifVisible);
   };
 
+  
+
   return (
     <header className="Header">
       <a href="#" onClick={toggleGif}>
-        <img src={require("./logo.png")} className="Logo" alt="logo"/>
+        <img src={require("./logo.png")} className="Logo" alt="logo" style={{marginLeft:'-95%', marginTop:'-15px'}}/>
       </a>
       {gifVisible && (
         <div className="GifContainer">

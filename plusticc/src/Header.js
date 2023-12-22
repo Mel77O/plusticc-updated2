@@ -3,20 +3,12 @@
 import React, { useState, useEffect } from "react";
 import "./Header.css";
 import { CSSTransition } from "react-transition-group";
-import { useNavigate } from "react-router-dom";
-import { Avatar, Menu, MenuItem } from "@material-ui/core";
 
-const Header = ({ loggedInUser }) => {
-  console.log('Header - loggedInUser:', loggedInUser);
+export default function Header() {
   const [isNavVisible, setNavVisibility] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
-
   const [gifVisible, setGifVisible] = useState(false);
 
-
-
-
-  console.log(loggedInUser);
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 700px)");
     mediaQuery.addListener(handleMediaQueryChange);
@@ -33,27 +25,20 @@ const Header = ({ loggedInUser }) => {
     } else {
       setIsSmallScreen(false);
     }
-
   };
 
-  const handleLogout = () => {
-    // Implement logout logic
-    // Redirect or perform any other necessary actions
-    navigate('/');
-    console.log("Logout clicked");
+  const toggleNav = () => {
+    setNavVisibility(!isNavVisible);
   };
 
   const toggleGif = () => {
     setGifVisible(!gifVisible);
   };
 
-  
-
   return (
     <header className="Header">
-
       <a href="#" onClick={toggleGif}>
-        <img src={require("./logo.png")} className="Logo" alt="logo" style={{marginLeft:'-95%', marginTop:'-15px'}}/>
+        <img src={require("./logo.png")} className="Logo" alt="logo"/>
       </a>
       {gifVisible && (
         <div className="GifContainer">
@@ -73,11 +58,8 @@ const Header = ({ loggedInUser }) => {
           <a href="/about">About Us</a>
           <a href="/contact">Contact Us</a>
           
-     
         </nav>
       </CSSTransition>
     </header>
   );
 }
-//eyy
-export default Header;

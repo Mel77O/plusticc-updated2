@@ -36,14 +36,6 @@ const Header = ({ loggedInUser }) => {
 
   };
 
-  const handleMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-  };
-
   const handleLogout = () => {
     // Implement logout logic
     // Redirect or perform any other necessary actions

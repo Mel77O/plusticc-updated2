@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Register.css'; // Import your CSS file for styling
+import './Register.css'; 
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -36,6 +36,7 @@ const Register = () => {
  
       if (response.ok) {
         setRegistrationStatus('success');
+        alert('Registration Success!');
         setFormData({
           username: '',
           firstname: '',
@@ -54,21 +55,26 @@ const Register = () => {
     }
   };
 
+ 
+
   return (
+    
     <div className="reg-container">
       <div className="background-image" />
       <div className="container">
         <div className="left-grid">
           <img src={require("./regClean.jpg")} className="background-image-left" alt="registration" />
         </div>
-
+        
+      
         <div className="right-grid">
           <div className="reg-box">
-            <img src={require("./logo.png")} className="Logo" alt="logo" />
-
+            <img src={require("./plasticLogo.gif")}
+            style={{width: '120px', height: '120px', marginLeft:'10px', marginTop:'20px'}}
+            className="Logo" alt="logo" />
+ 
+            <br/>
             <form onSubmit={handleSubmit}>
-              <button style={{ backgroundColor: "#db4437" }}>Continue with Google</button>
-              <p>- or -</p>
               <input type="text" name="username" placeholder="Username" value={formData.username} onChange={handleChange} required />
               <input type="text" name="firstname" placeholder="Firstname" value={formData.firstname} onChange={handleChange} required />
               <input type="text" name="lastname" placeholder="Lastname" value={formData.lastname} onChange={handleChange} required />

@@ -21,14 +21,12 @@ const GetStarted = () => {
   };
 
   return (
-    <div>
-      <Header />
       <div className="get-started-container">
         {/* Left grid with background image */}
-        <div className="left-grid" style={{ backgroundImage: `url(${backgroundImage})` }}></div>
-
+        <div className="left-grid get-started-overlay" style={{ backgroundImage: `url(${backgroundImage})` }}></div>
         {/* Right grid with text and buttons */}
         <div className="right-grid">
+          <img src={require("./logo.png")} className="Logo" alt="logo" width="90px" height="100px" />
           <h1>Get started with +TIC</h1>
           <h3>"The only way forward is to treat plastic as a valuable resource, not as disposable waste. Let's manage it wisely for a cleaner, greener tomorrow."</h3>
 
@@ -41,11 +39,9 @@ const GetStarted = () => {
               style={{marginLeft: '20px', marginRight: '10px', borderRadius:'5px', backgroundColor:'white', color:'black', border:'1px solid black'}}>
                 Login
             </button>
-          </div>
-          
+          </div> 
         </div>
       </div>
-    </div>
   );
 };
 

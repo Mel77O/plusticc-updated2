@@ -66,7 +66,7 @@ const Map = () => {
         .then(response => response.json())
         .then(data => {
           console.log('Post created successfully:', data);
-  
+          alert('Post created successfully!');
           // Update the local state with the newly created post
           setPosts((prevPosts) => [...prevPosts, newPost]);
   
@@ -116,14 +116,18 @@ const Map = () => {
       </form>
 
       {/* Display submitted posts */}
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
       {posts.map((post) => (
         <div key={post.id}>
-          <img src={post.photo} alt="Post" style={{ maxWidth: '100%' }} />
-          <p><strong>Location:</strong> {post.location}</p>
-          <p><strong>Description:</strong> {post.description}</p>
+         
+            <img src={post.photo} alt="Post" style={{ maxWidth: '100%' }} />
+            <p><strong>Location:</strong> {post.location}</p>
+            <p><strong>Description:</strong> {post.description}</p>
+
           <hr />
         </div>
       ))}
+      </div>
     </div>
   );
 };

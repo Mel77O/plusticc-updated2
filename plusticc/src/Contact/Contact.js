@@ -10,6 +10,8 @@ const Contact = () => {
     message: '',
   });
 
+  const [showModal, setShowModal] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -37,6 +39,9 @@ const Contact = () => {
           subject: '',
           message: '',
         });
+
+        alert('Thank you for contacting us. You’re helping us make +TIC better! We couldn’t be more grateful for your feedback. Your opinion matters, is hugely appreciated, and we’ll take that into consideration to make our offerings better.');
+
       } else {
         console.error('Error submitting form:', response.status);
       }
@@ -44,6 +49,9 @@ const Contact = () => {
       console.error('Error:', error.message);
     }
   };
+
+
+  
 
   return (
     <div className="contact-container-custom">
@@ -97,8 +105,33 @@ const Contact = () => {
           <button className="button-custom" type="submit">Submit</button>
         </form>
       </div>
+
+      
+
+    
     </div>
+
+
+
   );
 };
+
+const Modal = ({ showModal, closeModal }) => (
+  <div className={`modal ${showModal ? 'show' : ''}`}>
+    <div className="modal-content">
+      <span className="close" onClick={closeModal}>&times;</span>
+      <p>
+        Thank you for contacting us. You’re helping us make +TIC better! 
+        We couldn’t be more grateful for your feedback. Your opinion matters, 
+        is hugely appreciated, and we’ll take that into consideration to make our offerings better.
+      </p>
+      <p>
+        Going forward, don’t think twice before writing to use with any ideas or suggestions. 
+        We totally want that from you!
+      </p>
+      <p>Thank you once again, +TIC</p>
+    </div>
+  </div>
+);
 
 export default Contact;
